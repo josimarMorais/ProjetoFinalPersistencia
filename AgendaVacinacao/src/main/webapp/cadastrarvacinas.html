@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cadastro Vacinas</title>
+</head>
+<body>
+	
+	<h2>Novo cadastro de vacina:</h2>
+	
+	<form method= "post" action="IncluirVacina">
+		
+		<label>Titulo</label><br>
+		<input type="text" name="txtTitulo">
+		<br><br>
+		
+		<label>Descrição</label><br>
+		<textarea  name="TextDescricao" rows="3" cols="40" placeholder="Digite uma breve descrição da vacina"></textarea>
+		<br><br>
+		
+		<label>Doses</label><br>
+		<input type="text" name="txtDoses">
+		<br><br>
+		
+		<label>Periodicidade</label><br>
+		<select name="SelPeriodicidade">
+			<option selected> Selecione</option>
+			<option value="0"> Dose única</option>
+			<option value="1"> Dia</option>
+			<option value="2">Semana</option>
+			<option value="3"> Mês</option>
+			<option value="">Ano</option>
+		</select>
+		<br><br>
+		
+		<label>Intervalo</label><br>
+		<input type="text" name="txtIntervalo" placeholder="Digite 0 se for dose única!">
+		<br><br>
+		
+		<button type="submit">Cadastrar</button>
+		
+		
+	</form>
+		<br><br>
+		<a href="index.jsp">Menu principal</a>		
+	
+</body>
+</html>

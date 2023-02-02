@@ -1,0 +1,87 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>IncluirAgenda</servlet-name>
+  	<display-name>IncluirAgenda</display-name>
+  	<description></description>
+  	<servlet-class>servlet.IncluirAgenda</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>IncluirAlergia</servlet-name>
+  	<display-name>IncluirAlergia</display-name>
+  	<description></description>
+  	<servlet-class>servlet.IncluirAlergia</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>IncluirVacina</servlet-name>
+  	<display-name>IncluirVacina</display-name>
+  	<description></description>
+  	<servlet-class>servlet.IncluirVacina</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ListarAgendas</servlet-name>
+  	<display-name>ListarAgendas</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ListarAgendas</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ListarAlergias</servlet-name>
+  	<display-name>ListarAlergias</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ListarAlergias</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ListarVacinas</servlet-name>
+  	<display-name>ListarVacinas</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ListarVacinas</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>IncluirUsuario</servlet-name>
+  	<display-name>IncluirUsuario</display-name>
+  	<description></description>
+  	<servlet-class>servlet.IncluirUsuario</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ListarUsuarios</servlet-name>
+  	<display-name>ListarUsuarios</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ListarUsuarios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>IncluirAgenda</servlet-name>
+  	<url-pattern>/IncluirAgenda</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>IncluirAlergia</servlet-name>
+  	<url-pattern>/IncluirAlergia</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>IncluirVacina</servlet-name>
+  	<url-pattern>/IncluirVacina</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListarAgendas</servlet-name>
+  	<url-pattern>/ListarAgendas</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListarAlergias</servlet-name>
+  	<url-pattern>/ListarAlergias</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListarVacinas</servlet-name>
+  	<url-pattern>/ListarVacinas</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>IncluirUsuario</servlet-name>
+  	<url-pattern>/IncluirUsuario</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListarUsuarios</servlet-name>
+  	<url-pattern>/ListarUsuarios</url-pattern>
+  </servlet-mapping>
+</web-app>
