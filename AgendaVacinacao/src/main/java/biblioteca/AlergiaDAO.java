@@ -8,11 +8,10 @@ import negocio.Alergia;
 
 public class AlergiaDAO {
 	
+	private Alergia alergia;
 	EntityManager em = FabricaDeConexao.Obterconexao();
 	
-	
 	public void incluirNovaAlergia(Alergia novaAlergia) {
-	
 		em.getTransaction().begin();
 		em.persist(novaAlergia);
 		em.getTransaction().commit();
@@ -20,6 +19,17 @@ public class AlergiaDAO {
 		System.out.println("ID criado: " + novaAlergia.getId());
 		
 		FabricaDeConexao.fecharConexao(em);
+	}
+	
+	public void excluirAlergiaById(int id) {
+		
+		alergia = this.buscaPorId(id);
+		em.getTransaction().begin();
+		em.remove(alergia);
+		em.getTransaction().commit();
+		
+		System.out.println("ID Excluido: " + alergia.getId());
+		
 		
 	}
 	
@@ -30,4 +40,18 @@ public class AlergiaDAO {
 		
 	}
 	
+	public Alergia buscaPorId(int id) {
+		
+		return em.find(Alergia.class, id);
+		
+	}
+	
+	public List<Alergia> buscarPorNome(String nome) {
+		
+		String jpql = "SELECT a FROM Alergia a WHERE a.nome = :nome";
+		
+		return em.createQuery(jpql, Alergia.class)
+				.setParameter("nome", nome)
+				.getResultList();
+	}
 }

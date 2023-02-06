@@ -21,12 +21,9 @@ public class IncluirAgenda extends HttpServlet {
 		String txtData   	   = request.getParameter("dateData");
 		String txtHora		   = request.getParameter("timeHora");
 		String situacao	       = request.getParameter("SelSituacao");
-		String txtDataSituacao = request.getParameter("dateSituacao");
 		String observacoes     = request.getParameter("TextObservacoes");
 		
-		
 		LocalDate data         = LocalDate.parse(txtData);
-		LocalDate dataSituacao = LocalDate.parse(txtDataSituacao);
 		LocalTime hora         = LocalTime.parse(txtHora);
 		EnumTipo EnumSituacao  = EnumTipo.valueOf(situacao);
 		
@@ -36,8 +33,10 @@ public class IncluirAgenda extends HttpServlet {
 //		System.out.println("Data Situacao: " + dataSituacao);
 //		System.out.println("Observacoes:    " + observacoes);
 		
-		Agenda agenda = new Agenda(data, hora, EnumSituacao, dataSituacao, observacoes);
+		LocalDate dataSituação = null;
 		
+		
+		Agenda agenda = new Agenda(data, hora, EnumSituacao, dataSituação, observacoes);
 		AgendaDAO adao = new AgendaDAO();
 				
 		adao.incluirNovaAgenda(agenda);

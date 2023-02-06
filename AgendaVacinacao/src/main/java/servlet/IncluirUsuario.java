@@ -2,16 +2,18 @@ package servlet;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import biblioteca.AlergiaDAO;
 import biblioteca.UsuarioDAO;
-import biblioteca.VacinaDAO;
+import negocio.Alergia;
 import negocio.Usuario;
-import negocio.Vacina;
 
 
 public class IncluirUsuario extends HttpServlet {
@@ -28,31 +30,33 @@ public class IncluirUsuario extends HttpServlet {
 		String setor	 	     = request.getParameter("txtSetor");
 		String cidade	 	     = request.getParameter("txtCidade");
 		String estado	 	     = request.getParameter("selEstado");
+		String alergia[]        = request.getParameterValues("checkAlergia");
 		
 		
 		Character sexoC          = sexo.charAt(0);
 		LocalDate dataNascimento  = LocalDate.parse(txtdataNascimento);
 		
 		
-		System.out.println("Nome: " + nome);
-		System.out.println("Data De Nascimento: " + dataNascimento);
-		System.out.println("Sexo: " + sexoC);
-		System.out.println("Logradouro: " + Logradouro);
-		System.out.println("Número: " + numero);
-		System.out.println("Setor: " + setor);
-		System.out.println("Cidade: " + cidade);
-		System.out.println("Estado: " + estado);
-		
+		Alergia ale = new Alergia();
+		AlergiaDAO adao = new AlergiaDAO();
+		List<Alergia> alergias = new ArrayList<>();
+			
 		Usuario novoUsuario = new Usuario(nome, dataNascimento, sexoC, Logradouro, numero, setor, cidade, estado);
+		
+		if(alergia != null) {
+			for(int i = 0; i < alergia.length; i++) {
+				int id = Integer.parseInt(alergia[i]);
+				ale = adao.buscaPorId(id);
+				alergias.add(ale);			
+			}	
+			novoUsuario.setAlergias(alergias);
+		}
 		
 		UsuarioDAO udao = new UsuarioDAO();
 		
 		udao.incluirNovoUsuario(novoUsuario);
-		
-		
-		response.sendRedirect("ListarUsuarios");
-		
-		
-	}
 
+		response.sendRedirect("ListarUsuarios");
+
+	}
 }

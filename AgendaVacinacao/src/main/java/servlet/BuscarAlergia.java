@@ -10,25 +10,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import biblioteca.AlergiaDAO;
-import biblioteca.UsuarioDAO;
 import negocio.Alergia;
-import negocio.Usuario;
 
-public class ListarUsuarios extends HttpServlet {
-	
+
+public class BuscarAlergia extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		UsuarioDAO udao = new UsuarioDAO();
-		AlergiaDAO adao = new AlergiaDAO();
 		
-		List<Usuario> usuarios = udao.listar();
-		List<Alergia> alergias = adao.listar();
-		request.setAttribute("usuarios", usuarios);
+		String nome = request.getParameter("txtNome");
+		
+		AlergiaDAO aldao = new AlergiaDAO();
+		
+		List<Alergia> alergias = aldao.buscarPorNome(nome);
+		
 		request.setAttribute("alergias", alergias);
-		RequestDispatcher rd = request.getRequestDispatcher("listarusuarios.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("listarbuscaalergia.jsp");
 		rd.forward(request, response);
 		
 	}

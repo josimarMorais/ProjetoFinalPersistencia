@@ -1,29 +1,20 @@
-<!DOCTYPE html>
+<jsp:include page="cabecalho.jsp" />
+
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+
 </head>
 <body>
-	<h2>SAV - Sistem para Agendamento de vacinação</h2>
 
-	<a href="cadastraralergias.html"> Cadastrar Alegia </a> 
-	<br>
-	<a href="cadastrarvacinas.html"> Cadastrar Vacina </a>
-	<br>
-	<a href="cadastraragendas.html"> Cadastrar Agenda </a>
-	<br>
-	<a href="cadastrarusuarios.html"> Cadastrar Usuário </a>
-
-	<br><br><br><br>
-	
-	<a href="ListarAlergias"> Lista Alergias </a>
-	<br>
-	<a href="ListarVacinas">  Lista Vacinas </a>
-	<br>
-	<a href="ListarAgendas">  Lista Agendas </a>
-	<br>
-	<a href="ListarUsuarios"> Lista Usuários </a>
-	
+	<div class="container">
+		<div class="row py-3">
+			<div class="col">
+				<h1 class="text-sm-center">Bem vindo ao sistema de agendamento
+					de vacinação</h1>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -8,6 +8,7 @@ import negocio.Agenda;
 
 public class AgendaDAO {
 	
+	private Agenda agenda;
 	EntityManager em = FabricaDeConexao.Obterconexao();
 
 	public void incluirNovaAgenda( Agenda novaAgenda) {
@@ -20,6 +21,18 @@ public class AgendaDAO {
 		
 		FabricaDeConexao.fecharConexao(em);
 	}
+	
+	public void excluirAgendaById(int id) {
+		
+		agenda = em.find(Agenda.class, id);
+		
+		em.getTransaction().begin();
+		em.remove(agenda);
+		em.getTransaction().commit();
+		
+		System.out.println("ID Excluido: " + agenda.getId());
+		
+	}	
 	
 	
 	public List<Agenda> listar(){

@@ -50,7 +50,7 @@ public class Usuario {
 	private List<Agenda> agendas = new ArrayList<>();
 		
 	@ManyToMany
-	@JoinTable(name = "usuarios_alergias", joinColumns = @JoinColumn(name ="id_usuario", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "id_alergia", referencedColumnName = "id"))
+	@JoinTable(name = "usuarios_alergias",  joinColumns = @JoinColumn(name ="id_usuario", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "id_alergia", referencedColumnName = "id"))
 	private List<Alergia> alergias = new ArrayList<>();
 	
 	

@@ -33,7 +33,7 @@ public class Agenda {
 	@Column(nullable = true, length = 200)
 	private String observacoes;
 	
-	@ManyToOne	
+	@ManyToOne
 	private Usuario usuario;
 	
 	@ManyToOne

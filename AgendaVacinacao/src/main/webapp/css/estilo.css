@@ -1,0 +1,22 @@
+#ulCabecalho .nav-item .nav-link {
+	color: #fff;
+	font-weight: 600;
+}
+
+
+#ulCabecalho .nav-item .nav-link:hover {
+	color: #fff;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+
+#navCabecalho {	
+	box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+
+#navCabecalho .navbar-brand {
+	color: #fff;
+	font-size: 30px;
+}

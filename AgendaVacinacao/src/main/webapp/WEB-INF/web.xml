@@ -52,6 +52,48 @@
   	<description></description>
   	<servlet-class>servlet.ListarUsuarios</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ExcluirUsuario</servlet-name>
+  	<display-name>ExcluirUsuario</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ExcluirUsuario</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ExcluirAlergia</servlet-name>
+  	<display-name>ExcluirAlergia</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ExcluirAlergia</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ExcluirVacina</servlet-name>
+  	<display-name>ExcluirVacina</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ExcluirVacina</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ExcluirAgenda</servlet-name>
+  	<display-name>ExcluirAgenda</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ExcluirAgenda</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BuscarAlergia</servlet-name>
+  	<display-name>BuscarAlergia</display-name>
+  	<description></description>
+  	<servlet-class>servlet.BuscarAlergia</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BuscarVacina</servlet-name>
+  	<display-name>BuscarVacina</display-name>
+  	<description></description>
+  	<servlet-class>servlet.BuscarVacina</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BuscarUsuario</servlet-name>
+  	<display-name>BuscarUsuario</display-name>
+  	<description></description>
+  	<servlet-class>servlet.BuscarUsuario</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>IncluirAgenda</servlet-name>
   	<url-pattern>/IncluirAgenda</url-pattern>
@@ -83,5 +125,33 @@
   <servlet-mapping>
   	<servlet-name>ListarUsuarios</servlet-name>
   	<url-pattern>/ListarUsuarios</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ExcluirUsuario</servlet-name>
+  	<url-pattern>/ExcluirUsuario</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ExcluirAlergia</servlet-name>
+  	<url-pattern>/ExcluirAlergia</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ExcluirVacina</servlet-name>
+  	<url-pattern>/ExcluirVacina</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ExcluirAgenda</servlet-name>
+  	<url-pattern>/ExcluirAgenda</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BuscarAlergia</servlet-name>
+  	<url-pattern>/BuscarAlergia</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BuscarVacina</servlet-name>
+  	<url-pattern>/BuscarVacina</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BuscarUsuario</servlet-name>
+  	<url-pattern>/BuscarUsuario</url-pattern>
   </servlet-mapping>
 </web-app>
