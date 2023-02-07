@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import biblioteca.AgendaDAO;
+import biblioteca.UsuarioDAO;
+import biblioteca.VacinaDAO;
 import negocio.Agenda;
+import negocio.Usuario;
+import negocio.Vacina;
 
 public class ListarAgendas extends HttpServlet {
 	
@@ -18,10 +22,16 @@ public class ListarAgendas extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		AgendaDAO adao = new AgendaDAO();
+		UsuarioDAO usdao = new UsuarioDAO();
+		VacinaDAO  vadao = new VacinaDAO();
+		AgendaDAO  agdao = new AgendaDAO();
 		
-		List<Agenda> agendas = adao.listar();
+		List<Usuario> usuarios = usdao.listar();
+		List<Vacina>  vacinas  = vadao.listar();
+		List<Agenda>  agendas  = agdao.listar();
 		
+		request.setAttribute("usuarios", usuarios);
+		request.setAttribute("vacinas", vacinas);
 		request.setAttribute("agendas", agendas);
 		RequestDispatcher rd = request.getRequestDispatcher("listaragendas.jsp");
 		rd.forward(request, response);

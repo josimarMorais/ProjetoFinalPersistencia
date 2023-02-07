@@ -76,24 +76,24 @@
 
 									<div class="mb-3">
 										<label for="txtTitulo" class="form-label">Titulo </label> 
-										<input type="text" class="form-control" id="txtTitulo" name="txtTitulo">
+										<input type="text" class="form-control" id="txtTitulo" name="txtTitulo" required>
 									</div>
 									
 									<div class="mb-3">
 										<label for="TextDescricao" class="form-label">Descrição</label>
 										<textarea  class="form-control" name="TextDescricao" rows="3" cols="40" 
-										placeholder="Digite uma breve descrição da vacina"></textarea>
+										placeholder="Digite uma breve descrição da vacina" required></textarea>
 									</div>
 									
 									<div class="mb-3">
 										<label for="txtDoses" class="form-label">Doses </label> 
-										<input type="number" class="form-control" id="txtDoses" name="txtDoses">
+										<input type="number" class="form-control" id="txtDoses" name="txtDoses" required>
 									</div>
 									
 									<div class="mb-3">
-										<label for="SelPeriodicidade" class="form-label">Doses</label> 
-										<select class="form-select" name="SelPeriodicidade" id="SelPeriodicidade">
-											<option selected > Selecione</option>
+										<label for="SelPeriodicidade" class="form-label">Periodicidade</label> 
+										<select class="form-select" name="SelPeriodicidade" id="SelPeriodicidade" required>
+											<option value="" > Selecione</option>
 											<option value="0"> Dose única</option>
 											<option value="1"> Dia</option>
 											<option value="2"> Semana</option>
@@ -104,7 +104,7 @@
 									
 									<div class="mb-3">
 										<label for="txtIntervalo" class="form-label">Intervalo</label> 
-										<input type="number" class="form-control" id="txtIntervalo" name="txtIntervalo">
+										<input type="number" class="form-control" id="txtIntervalo" name="txtIntervalo" required>
 									</div>
 									
 									<div>
@@ -158,7 +158,7 @@
 									<form method="get" action="BuscarVacina">
 										<div class="mb-3">
 										<label for="txtTitulo" class="form-label">Titulo</label>
-										<input type="text" class="form-control" id="txtTitulo" name="txtTitulo">
+										<input type="text" class="form-control" id="txtTitulo" name="txtTitulo" required>
 									</div>										
 									
 									<div>

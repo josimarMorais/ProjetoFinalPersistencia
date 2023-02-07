@@ -38,7 +38,6 @@
 					<% for (Alergia alergia : listarAlergias) { %>
 					
 					<tr class="text-right">
-						<td><%= alergia.getId()%></td>
 						<td><%= alergia.getNome()%></td>
 					<% } %>
 				<%}%>

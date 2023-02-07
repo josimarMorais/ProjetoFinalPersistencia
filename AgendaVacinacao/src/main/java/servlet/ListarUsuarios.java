@@ -25,6 +25,7 @@ public class ListarUsuarios extends HttpServlet {
 		AlergiaDAO adao = new AlergiaDAO();
 		
 		List<Usuario> usuarios = udao.listar();
+		
 		List<Alergia> alergias = adao.listar();
 		request.setAttribute("usuarios", usuarios);
 		request.setAttribute("alergias", alergias);

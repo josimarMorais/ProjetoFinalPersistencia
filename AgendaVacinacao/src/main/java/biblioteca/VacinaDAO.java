@@ -23,22 +23,25 @@ public class VacinaDAO {
 	}
 	
 	public void excluirVacinaById(int id) {
-		
 		vacina = em.find(Vacina.class, id);
 		
 		em.getTransaction().begin();
 		em.remove(vacina);
 		em.getTransaction().commit();
 		
-		System.out.println("ID Excluido: " + vacina.getId());
-				
-		
+		System.out.println("ID Excluido: " + vacina.getId());			
 	}
 	
 	public List<Vacina> listar(){
 		
-		String jpql = "SELECT v FROM Vacina v";
+		String jpql = "SELECT v FROM Vacina v ORDER BY v.titulo";
 		return em.createQuery(jpql, Vacina.class).getResultList();
+	}
+	
+	
+	public Vacina buscarPorID(int id) {
+		return em.find(Vacina.class, id);
+		
 	}
 	
 	

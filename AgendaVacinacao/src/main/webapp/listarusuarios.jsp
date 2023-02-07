@@ -12,6 +12,8 @@
 <%
 @SuppressWarnings("unchecked")
 List<Usuario> listaUsuarios = (List<Usuario>) request.getAttribute("usuarios");
+
+@SuppressWarnings("unchecked")
 List<Alergia> listaAlergias = (List<Alergia>) request.getAttribute("alergias");
 
 %>
@@ -88,17 +90,18 @@ List<Alergia> listaAlergias = (List<Alergia>) request.getAttribute("alergias");
 
 									<div class="mb-3">
 										<label for="txtNome" class="form-label">Nome </label> <input
-											type="text" class="form-control" id="txtNome" name="txtNome">
+											type="text" class="form-control" id="txtNome" name="txtNome" required>
 									</div>
 
 									<div class="mb-3">
 										<label for="dateDataNascimento" class="form-label">Data
 											de Nascimento </label> <input type="date" class="form-control"
-											id="dateDataNascimento" name="dateDataNascimento">
+											id="dateDataNascimento" name="dateDataNascimento" required>
 									</div>
-
+									
+									
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="sexo" id="F" value="F">
+										<input class="form-check-input" type="radio" name="sexo" id="F" value="F" required>
 										<label class="form-check-label" for="F">Feminino</label>
 									</div>
 									<div class="form-check">
@@ -106,32 +109,33 @@ List<Alergia> listaAlergias = (List<Alergia>) request.getAttribute("alergias");
 										<label class="form-check-label" for="M">Masculino</label>
 									</div>
 
+
 									<div class="mb-3">
 										<label for="txtLogradouro" class="form-label">Logradouro
 										</label> <input type="text" class="form-control" id="txtLogradouro"
-											name="txtLogradouro">
+											name="txtLogradouro" required>
 									</div>
 
 									<div class="mb-3">
 										<label for="txtNumero" class="form-label">Número</label> <input
 											type="number" class="form-control" id="txtNumero"
-											name="txtNumero">
+											name="txtNumero" required>
 									</div>
 
 									<div class="mb-3">
 										<label for="txtSetor" class="form-label">Setor</label> <input
 											type="text" class="form-control" id="txtSetor"
-											name="txtSetor">
+											name="txtSetor" required>
 									</div>
 
 									<div class="mb-3">
 										<label for="txtCidade" class="form-label">Cidade</label> <input
 											type="text" class="form-control" id="txtCidade"
-											name="txtCidade">
+											name="txtCidade" required>
 									</div>
 
-									<select class="form-select" name="selEstado">
-										<option selected>Estado</option>
+									<select class="form-select" name="selEstado" required>
+										<option value=""  >Estado</option>
 										<option value="AC">Acre</option>
 										<option value="AL">Alagoas</option>
 										<option value="AP">Amapá</option>
@@ -228,7 +232,7 @@ List<Alergia> listaAlergias = (List<Alergia>) request.getAttribute("alergias");
 									<form method="get" action="BuscarUsuario">
 										<div class="mb-3">
 										<label for="txtNome" class="form-label">Nome</label>
-										<input type="text" class="form-control" id="txtNome" name="txtNome">
+										<input type="text" class="form-control" id="txtNome" name="txtNome" required>
 									</div>										
 									
 									<div>

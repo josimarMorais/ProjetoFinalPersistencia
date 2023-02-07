@@ -10,36 +10,49 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import biblioteca.AgendaDAO;
+import biblioteca.UsuarioDAO;
+import biblioteca.VacinaDAO;
 import negocio.Agenda;
 import negocio.EnumTipo;
+import negocio.Usuario;
+import negocio.Vacina;
 
 public class IncluirAgenda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String txtData   	   = request.getParameter("dateData");
-		String txtHora		   = request.getParameter("timeHora");
-		String situacao	       = request.getParameter("SelSituacao");
-		String observacoes     = request.getParameter("TextObservacoes");
+		Integer idUsuario      = Integer.parseInt(request.getParameter("selUsuario"));
+		Integer idVacina       = Integer.parseInt(request.getParameter("selVacina"));
+		String  txtData   	   = request.getParameter("dateData");
+		String  txtHora		   = request.getParameter("timeHora");
+		String  observacoes    = request.getParameter("TextObservacoes");
 		
+		
+		String  situacao       = "AGENDADO";
 		LocalDate data         = LocalDate.parse(txtData);
 		LocalTime hora         = LocalTime.parse(txtHora);
 		EnumTipo EnumSituacao  = EnumTipo.valueOf(situacao);
-		
-//		System.out.println("Data:          " + data);
-//		System.out.println("Hora: 		   " + hora);
-//		System.out.println("Situacao:      " + EnumSituacao);
-//		System.out.println("Data Situacao: " + dataSituacao);
-//		System.out.println("Observacoes:    " + observacoes);
-		
 		LocalDate dataSituação = null;
+		
+		//System.out.println("Id usuario:          " + txtIdUsuario);
+		//System.out.println("Id Vacina: 		   " + txtIdVacina);
+		//System.out.println("Situacao:      " + EnumSituacao);
+		
+		UsuarioDAO usdao = new UsuarioDAO();
+		VacinaDAO  vadao = new VacinaDAO();
+		AgendaDAO  agdao = new AgendaDAO();
+		
+		Usuario usuario = usdao.buscarPorID(idUsuario);
+		Vacina  vacina  = vadao.buscarPorID(idVacina);
 		
 		
 		Agenda agenda = new Agenda(data, hora, EnumSituacao, dataSituação, observacoes);
-		AgendaDAO adao = new AgendaDAO();
+		agenda.setUsuario(usuario);
+		agenda.setVacina(vacina);
+		
 				
-		adao.incluirNovaAgenda(agenda);
+		agdao.incluirNovaAgenda(agenda);
 		
 		response.sendRedirect("ListarAgendas");
 	}

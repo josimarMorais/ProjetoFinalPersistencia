@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import negocio.Alergia;
 import negocio.Usuario;
 
 public class UsuarioDAO {
@@ -32,10 +31,14 @@ public class UsuarioDAO {
 	
 	
 	public List<Usuario> listar(){
-		String jpql = "SELECT u FROM Usuario u";
+		String jpql = "SELECT u FROM Usuario u ORDER BY u.nome";
 		return em.createQuery(jpql, Usuario.class).getResultList();
 	}
 	
+	public Usuario buscarPorID(int id) {
+		return em.find(Usuario.class, id);
+		
+	}
 	
 	public List<Usuario> buscarPorNome(String nome){
 		
@@ -44,8 +47,5 @@ public class UsuarioDAO {
 		return em.createQuery(jpql, Usuario.class)
 				.setParameter("nome", nome)
 				.getResultList();
-				
-		
 	}
-	
 }

@@ -107,5 +107,13 @@ public class Agenda {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public Vacina getVacina() {
+		return vacina;
+	}
+
+	public void setVacina(Vacina vacina) {
+		this.vacina = vacina;
+	}
 	
 }

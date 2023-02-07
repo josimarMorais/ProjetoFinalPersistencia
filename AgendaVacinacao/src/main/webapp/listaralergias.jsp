@@ -51,7 +51,7 @@
 					<% } %>
 				</table>
 				
-								<!-- Modal Create-->
+				<!-- Modal Create-->
 				<div class="modal fade" id="createModal">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -66,7 +66,7 @@
 	
 										<div class="mb-3">
 											<label for="txtNome" class="form-label">Nome </label> <input
-												type="text" class="form-control" id="txtNome" name="txtNome">
+												type="text" class="form-control" id="txtNome" name="txtNome" required>
 										</div>
 										<div>
 										<button type="submit" class="btn btn-success mt-2">Adicionar</button>
@@ -75,8 +75,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div><!-- Modal Create Fim -->
+					</div><!-- Modal Create Fim -->
+				</div>
 				
 				<!-- Modal Delete -->
 			<div class="modal fade" id="deleteModal">
@@ -118,7 +118,7 @@
 									<form method="get" action="BuscarAlergia">
 										<div class="mb-3">
 										<label for="txtNome" class="form-label">Nome</label>
-										<input type="text" class="form-control" id="txtNome" name="txtNome">
+										<input type="text" class="form-control" id="txtNome" name="txtNome" required>
 									</div>										
 									
 									<div>

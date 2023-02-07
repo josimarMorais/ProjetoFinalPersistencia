@@ -30,6 +30,8 @@ public class Vacina {
 	@Column(nullable = true)
 	private int intervalo;
 	
+	
+	
 	public Vacina() {
 		
 	}

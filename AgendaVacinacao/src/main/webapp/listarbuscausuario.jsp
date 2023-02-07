@@ -16,6 +16,8 @@
 <%
 	@SuppressWarnings("unchecked")
 	List<Usuario> listarUsuarios = (List<Usuario>) request.getAttribute("usuarios");
+
+	@SuppressWarnings("unchecked")
 	List<Alergia> listarAlergias = (List<Alergia>) request.getAttribute("alergias");
 	
 
