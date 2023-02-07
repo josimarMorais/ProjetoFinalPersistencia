@@ -66,7 +66,7 @@
 	
 										<div class="mb-3">
 											<label for="txtNome" class="form-label">Nome </label> <input
-												type="text" class="form-control" id="txtNome" name="txtNome" required>
+												type="text" class="form-control" id="txtNome" name="txtNome" autofocus required>
 										</div>
 										<div>
 										<button type="submit" class="btn btn-success mt-2">Adicionar</button>

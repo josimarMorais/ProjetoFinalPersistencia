@@ -22,8 +22,9 @@ public class AgendaDAO {
 		FabricaDeConexao.fecharConexao(em);
 	}
 	
-	public void excluirAgendaById(int id) {
-		
+	
+	
+	public void excluirAgendaById(int id) {	
 		agenda = em.find(Agenda.class, id);
 		
 		em.getTransaction().begin();
@@ -31,14 +32,28 @@ public class AgendaDAO {
 		em.getTransaction().commit();
 		
 		System.out.println("ID Excluido: " + agenda.getId());
-		
 	}	
 	
 	
+	
 	public List<Agenda> listar(){
-		
 		String jpql = "SELECT a FROM Agenda a";
 		return em.createQuery(jpql, Agenda.class).getResultList();
 	}
+	
+	
+	
+	public void AtualizarAgenda(Agenda agenda) {
+		em.getTransaction().begin();
+		em.merge(agenda);
+		em.getTransaction().commit();
+	}
+	
+	
+	
+	public Agenda buscarPorID(Integer id) {
+		return em.find(Agenda.class, id);
+	}
+	
 	
 }

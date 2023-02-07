@@ -94,6 +94,12 @@
   	<description></description>
   	<servlet-class>servlet.BuscarUsuario</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>MudarSituacao</servlet-name>
+  	<display-name>MudarSituacao</display-name>
+  	<description></description>
+  	<servlet-class>servlet.MudarSituacao</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>IncluirAgenda</servlet-name>
   	<url-pattern>/IncluirAgenda</url-pattern>
@@ -153,5 +159,9 @@
   <servlet-mapping>
   	<servlet-name>BuscarUsuario</servlet-name>
   	<url-pattern>/BuscarUsuario</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MudarSituacao</servlet-name>
+  	<url-pattern>/MudarSituacao</url-pattern>
   </servlet-mapping>
 </web-app>
