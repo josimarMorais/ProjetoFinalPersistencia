@@ -38,7 +38,10 @@ List<Agenda> listaAgendas = (List<Agenda>) request.getAttribute("agendas");
 								data-bs-target="#createModal">+ Adicionar Nova Agenda</button>
 						</div>
 						<div class="col-3">
-							<form action="listarbuscaagenda.jsp">
+							
+							
+							<form action="BuscarAgenda" >
+							<input type="hidden" name="btnBuscar" Value="CARREGAR">
 							<button type="submit" class="btn btn-primary"> Realizar Nova Consulta</button>
 							</form>
 						</div>
@@ -205,9 +208,9 @@ List<Agenda> listaAgendas = (List<Agenda>) request.getAttribute("agendas");
 							</div>
 						</div>
 					</div>
-				</div>
+				</div><!-- Modal Delete Fim -->
 			</div>
-			<!-- Modal Delete Fim -->
+			
 
 		</div>
 	</div>

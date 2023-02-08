@@ -100,6 +100,12 @@
   	<description></description>
   	<servlet-class>servlet.MudarSituacao</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>BuscarAgenda</servlet-name>
+  	<display-name>BuscarAgenda</display-name>
+  	<description></description>
+  	<servlet-class>servlet.BuscarAgenda</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>IncluirAgenda</servlet-name>
   	<url-pattern>/IncluirAgenda</url-pattern>
@@ -163,5 +169,9 @@
   <servlet-mapping>
   	<servlet-name>MudarSituacao</servlet-name>
   	<url-pattern>/MudarSituacao</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BuscarAgenda</servlet-name>
+  	<url-pattern>/BuscarAgenda</url-pattern>
   </servlet-mapping>
 </web-app>

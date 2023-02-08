@@ -10,7 +10,7 @@
 
 	<%
 		@SuppressWarnings("unchecked")
-		List<Alergia> listarAlergias = (List<Alergia>) request.getAttribute("alergias");
+		List<Alergia> listaAlergias = (List<Alergia>) request.getAttribute("alergias");
 	%>
 
 </head>
@@ -20,7 +20,7 @@
 			<div class="col">
 				<h4 class="my-1 py-2 text-sm-center">Resultado da busca</h4>
 				
-				<% if(listarAlergias.isEmpty()) {%>
+				<% if(listaAlergias.isEmpty()) {%>
 					<div class="container">
 					<div class="row py-3">
 						<div class="col">
@@ -35,7 +35,7 @@
 						<th>Nome</th>
 					</tr>
 					
-					<% for (Alergia alergia : listarAlergias) { %>
+					<% for (Alergia alergia : listaAlergias) { %>
 					
 					<tr class="text-right">
 						<td><%= alergia.getNome()%></td>

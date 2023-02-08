@@ -34,7 +34,7 @@ public class BuscarUsuario extends HttpServlet {
 		request.setAttribute("usuarios", usuarios);
 		request.setAttribute("alergias", alergias);
 		RequestDispatcher rd = request.getRequestDispatcher("listarbuscausuario.jsp");
-		rd.forward(request, response);		
+		rd.forward(request, response);
 
 		
 	}

@@ -5,10 +5,12 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import negocio.Agenda;
+import negocio.EnumTipo;
 
 public class AgendaDAO {
 	
 	private Agenda agenda;
+	
 	EntityManager em = FabricaDeConexao.Obterconexao();
 
 	public void incluirNovaAgenda( Agenda novaAgenda) {
@@ -54,5 +56,13 @@ public class AgendaDAO {
 		return em.find(Agenda.class, id);
 	}
 	
+	
+	
+	public List<Agenda> buscarPorEnumTipo(String filtro) {
+		EnumTipo tipo = EnumTipo.valueOf(filtro);
+		String jpql = "SELECT a FROM Agenda a WHERE a.situacao = :tipo";
+		
+		return em.createQuery(jpql, Agenda.class).setParameter("tipo", tipo).getResultList();
+	}
 	
 }
