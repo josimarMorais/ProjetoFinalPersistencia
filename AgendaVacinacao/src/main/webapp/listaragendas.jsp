@@ -37,10 +37,10 @@ List<Agenda> listaAgendas = (List<Agenda>) request.getAttribute("agendas");
 							<button class="btn btn-success mb-5  " data-bs-toggle="modal"
 								data-bs-target="#createModal">+ Adicionar Nova Agenda</button>
 						</div>
-						<div class="col-9">
-							<button class="btn btn-primary mb-5 col-3 "
-								data-bs-toggle="modal" data-bs-target="#searchModal">
-								Buscar Agenda</button>
+						<div class="col-3">
+							<form action="listarbuscaagenda.jsp">
+							<button type="submit" class="btn btn-primary"> Realizar Nova Consulta</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -71,20 +71,19 @@ List<Agenda> listaAgendas = (List<Agenda>) request.getAttribute("agendas");
 						<td><%=a.getObservacoes()%></td>
 						<td>
 							<div class="row">
-								<div class=" col-2"></div>
-								<div class="col-2">
+								<div class="col-3">
 									<form method="get" action="MudarSituacao">
-										
-										<input type="hidden" name="txtRealizada" value="REALIZADA"/>
-										<input type="hidden" name="id" value="<%=a.getId()%>"/>
+
+										<input type="hidden" name="txtRealizada" value="REALIZADA" />
+										<input type="hidden" name="id" value="<%=a.getId()%>" />
 										<button type="submit" class="btn btn-success btn-sm">
 											Realizada</button>
 									</form>
 								</div>
-								<div class="col-2">
+								<div class="col-3">
 									<form method="get" action="MudarSituacao">
 										<input type="hidden" name="txtRealizada" value="CANCELADA" />
-										<input type="hidden" name="id" value="<%=a.getId()%>"/>
+										<input type="hidden" name="id" value="<%=a.getId()%>" />
 										<button type="submit" class="btn btn-primary btn-sm">
 											Cancelada</button>
 									</form>
@@ -93,7 +92,7 @@ List<Agenda> listaAgendas = (List<Agenda>) request.getAttribute("agendas");
 								<div class="col-4 mx-1">
 									<button class="btn btn-danger btn-sm" data-bs-toggle="modal"
 										data-bs-target="#deleteModal"
-										onclick="onDelete('<%=a.getId()%>','<%=a.getData()%>', '<%=a.getHora()%>' )">Deletar</button>
+										onclick="onDelete('<%=a.getId()%>','<%=a.getData()%>','<%=a.getHora()%>' )">Deletar</button>
 								</div>
 							</div>
 						</td>

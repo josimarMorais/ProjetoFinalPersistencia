@@ -25,9 +25,14 @@ public class VacinaDAO {
 	public void excluirVacinaById(int id) {
 		vacina = em.find(Vacina.class, id);
 		
-		em.getTransaction().begin();
-		em.remove(vacina);
-		em.getTransaction().commit();
+		try {
+			em.getTransaction().begin();
+			em.remove(vacina);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Nâo pode deletar pois tem dependência com outro objeto.");
+		}
+
 		
 		System.out.println("ID Excluido: " + vacina.getId());			
 	}

@@ -18,11 +18,12 @@ public class ListarVacinas extends HttpServlet {
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		
 		VacinaDAO vdao = new VacinaDAO();
 		
 		List<Vacina> vacinas = vdao.listar();
-		
+			
 		request.setAttribute("vacinas", vacinas);
 		RequestDispatcher rd = request.getRequestDispatcher("listarvacinas.jsp");
 		rd.forward(request, response);

@@ -23,10 +23,17 @@ public class AlergiaDAO {
 	
 	public void excluirAlergiaById(int id) {
 		
-		alergia = this.buscaPorId(id);
-		em.getTransaction().begin();
-		em.remove(alergia);
-		em.getTransaction().commit();
+		try {
+			
+			alergia = this.buscaPorId(id);
+			em.getTransaction().begin();
+			em.remove(alergia);
+			em.getTransaction().commit();
+			
+		} catch (Exception e) {
+			System.out.println("Nâo pode deletar pois tem dependência com outro objeto.");
+		}
+
 		
 		System.out.println("ID Excluido: " + alergia.getId());
 		

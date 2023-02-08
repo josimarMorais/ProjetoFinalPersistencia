@@ -22,9 +22,15 @@ public class UsuarioDAO {
 	
 	public void excluirUsuarioById(int id) {
 		Usuario user = em.find(Usuario.class, id);
-		em.getTransaction().begin();
-		em.remove(user);
-		em.getTransaction().commit();
+		
+		try {
+			em.getTransaction().begin();
+			em.remove(user);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Nâo pode deletar pois tem dependência com outro objeto.");
+		}
+
 		
 		System.out.println("ID Excluido: " + user.getId());		
 	}

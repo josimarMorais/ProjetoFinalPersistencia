@@ -19,7 +19,7 @@
 
 </head>
 <body>
-	<nav id="navCabecalho" class="navbar navbar-expand-sm  bg-warning">
+	<nav id="navCabecalho" class="navbar navbar-expand-sm bg-warning ">
 		
 		<div class="container-fluid">
 		

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import biblioteca.AgendaDAO;
 import biblioteca.UsuarioDAO;
 import biblioteca.VacinaDAO;
 import negocio.Agenda;
@@ -42,7 +41,6 @@ public class IncluirAgenda extends HttpServlet {
 		
 		UsuarioDAO usdao = new UsuarioDAO();
 		VacinaDAO  vadao = new VacinaDAO();
-		AgendaDAO  agdao = new AgendaDAO();
 		
 		Usuario usuario = usdao.buscarPorID(idUsuario);
 		Vacina  vacina  = vadao.buscarPorID(idVacina);
@@ -53,8 +51,6 @@ public class IncluirAgenda extends HttpServlet {
 		agenda.setVacina(vacina);
 		
 		cadastrar.criarAgendas(agenda);
-		
-		agdao.incluirNovaAgenda(agenda);
 		
 		response.sendRedirect("ListarAgendas");
 	}

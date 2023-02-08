@@ -19,7 +19,6 @@ public class AgendaDAO {
 		
 		System.out.println("ID criado: " + novaAgenda.getId());
 		
-		FabricaDeConexao.fecharConexao(em);
 	}
 	
 	

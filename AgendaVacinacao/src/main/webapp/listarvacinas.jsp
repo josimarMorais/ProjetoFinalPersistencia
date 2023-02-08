@@ -13,6 +13,7 @@
 	<% 	
 		@SuppressWarnings("unchecked")
 		List<Vacina> listaVacinas = (List<Vacina>) request.getAttribute("vacinas");
+		
 	%>
 	
 </head>	
@@ -37,6 +38,16 @@
 				
 				<h4 class="my-1 py-2 text-sm-center">Relação de Vacinas Cadastradas</h4>
 				
+				<% if(listaVacinas.isEmpty()) {%>
+					<div class="container">
+					<div class="row py-3">
+						<div class="col">
+							<h5 class="my-1 py-2 text-sm-center">nenhum Resultado encontrado!</h5>
+						</div>
+					</div>
+				</div>
+					
+				<%} else {%>
 				<table class="table" >
 					<tr>
 						<th>Titulo</th>
@@ -60,7 +71,7 @@
 					</tr>
 					<% }%>
 				</table>
-				
+		<% } %>		
 				<!-- Modal Create-->
 				<div class="modal fade" id="createModal">
 					<div class="modal-dialog">
@@ -104,7 +115,8 @@
 									
 									<div class="mb-3">
 										<label for="txtIntervalo" class="form-label">Intervalo</label> 
-										<input type="number" class="form-control" id="txtIntervalo" name="txtIntervalo" required>
+										<input type="number" class="form-control" id="txtIntervalo" name="txtIntervalo" 
+											placeholder="Se for dose única, DIGITE 1" required>
 									</div>
 									
 									<div>
