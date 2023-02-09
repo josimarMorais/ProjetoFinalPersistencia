@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import negocio.Usuario;
 
 public class UsuarioDAO {
-	
+		
 	EntityManager em = FabricaDeConexao.Obterconexao();
 	
 	public void incluirNovoUsuario(Usuario novoUsuario) {
@@ -16,23 +16,23 @@ public class UsuarioDAO {
 		em.getTransaction().commit();
 		
 		System.out.println("ID criado: " + novoUsuario.getId());
-		FabricaDeConexao.fecharConexao(em);
+		
 	}
 	
 	
 	public void excluirUsuarioById(int id) {
-		Usuario user = em.find(Usuario.class, id);
 		
 		try {
 			em.getTransaction().begin();
+			Usuario user = em.find(Usuario.class, id);
 			em.remove(user);
 			em.getTransaction().commit();
+			System.out.println("ID Excluido: " + user.getId());		
 		} catch (Exception e) {
 			System.out.println("Nâo pode deletar pois tem dependência com outro objeto.");
 		}
 
 		
-		System.out.println("ID Excluido: " + user.getId());		
 	}
 	
 	
