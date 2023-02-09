@@ -39,5 +39,3 @@
 		
 		</div>
 	</nav>
-</body>
-</html>

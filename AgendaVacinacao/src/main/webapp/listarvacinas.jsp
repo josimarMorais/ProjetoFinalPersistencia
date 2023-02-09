@@ -53,7 +53,6 @@
 						<th>Titulo</th>
 						<th>Descricao</th>
 						<th>Doses</th>
-						<th>Periodicidade</th>
 						<th>Intervalo</th>
 						<th></th>
 					</tr>
@@ -64,7 +63,6 @@
 						<td><%=v.getTitulo() %></td>
 						<td><%=v.getDescricao() %></td>
 						<td><%=v.getDoses() %></td>
-						<td><%=v.getPeriocidade() %></td>
 						<td><%=v.getIntervalo() %></td>
 						<td><button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal"
 								onclick="onDelete('<%=v.getId()%>','<%=v.getTitulo()%>')" >Deletar</button></td>

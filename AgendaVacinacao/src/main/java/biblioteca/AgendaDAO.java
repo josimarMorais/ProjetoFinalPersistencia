@@ -1,5 +1,6 @@
 package biblioteca;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -65,4 +66,10 @@ public class AgendaDAO {
 		return em.createQuery(jpql, Agenda.class).setParameter("tipo", tipo).getResultList();
 	}
 	
+	
+	
+	public List<Agenda> buscarPorData( LocalDate data){
+		String jpql = "SELECT a FROM Agenda a WHERE a.data = :data";
+		return em.createQuery(jpql, Agenda.class).setParameter("data", data).getResultList();
+	}
 }

@@ -29,6 +29,7 @@ public class VacinaDAO {
 			em.getTransaction().begin();
 			em.remove(vacina);
 			em.getTransaction().commit();
+			
 		} catch (Exception e) {
 			System.out.println("Nâo pode deletar pois tem dependência com outro objeto.");
 		}
